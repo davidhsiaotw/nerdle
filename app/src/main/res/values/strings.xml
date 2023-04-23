@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Nerdle</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="game_fragment_label">Game Fragment</string>
+    <string name="console_fragment_label">Console Fragment</string>
+    <string name="navigate_to_console">Console</string>
+    <string name="navigate_to_game">Back to Game</string>
+    <string name="action_settings">Settings</string>
+</resources>

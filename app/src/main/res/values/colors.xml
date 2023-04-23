@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="correct">#00bb00</color>
+    <color name="wrong">#770077</color>
+    <color name="not_solution">#FF000000</color>
+    <color name="block">#7f7f7f</color>
+    <color name="number">#FFFFFFFF</color>
+</resources>

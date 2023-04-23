@@ -1,0 +1,11 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Nerdle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#ffb1c8</item>
+        <item name="colorOnPrimary">#650033</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#e3bdc6</item>
+        <item name="colorOnSecondary">#422931</item>
+    </style>
+</resources>

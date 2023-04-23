@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/GameFragment">
+
+    <fragment
+        android:id="@+id/GameFragment"
+        android:name="com.example.nerdle.GameFragment"
+        android:label="@string/game_fragment_label"
+        tools:layout="@layout/fragment_game">
+
+        <action
+            android:id="@+id/action_GameFragment_to_ConsoleFragment"
+            app:destination="@id/ConsoleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ConsoleFragment"
+        android:name="com.example.nerdle.SecondFragment"
+        android:label="@string/console_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_ConsoleFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
+    </fragment>
+</navigation>
