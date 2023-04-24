@@ -7,4 +7,21 @@
     <string name="navigate_to_console">Console</string>
     <string name="navigate_to_game">Back to Game</string>
     <string name="action_settings">Settings</string>
+    <string name="action_home">Home</string>
+    <string name="action_instruction">Instruction</string>
+    <string name="instruction">Guess the NERDLE in SIX tries. After each guess, the color of the
+        tiles will change to show how close your guess was to the solution.\n
+        • Each guess is a calculation.\n
+        • You can use 0 1 2 3 4 5 6 7 8 9 + - * / or =.\n
+        • It must contain one “=”.\n
+        • It must only have a number to the right of the “=”, not another calculation.\n
+        • It must only have a operator to the left of the “=”, not another calculation.\n
+        • If the answer is 10+20=30, then it only accepts 10+20=30.\n
+    </string>
+    <string name="hint">
+        • Green means the guess is in the solution and in the correct spot.\n
+        • Red means the guess is in the solution but in the wrong spot.\n
+        • Black means the guess is not in the solution in any spot.\n
+    </string>
+    <string name="showcase">Showcase</string>
 </resources>

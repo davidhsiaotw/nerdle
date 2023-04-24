@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nerdle.databinding.FragmentGameBinding
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class GameFragment : Fragment() {
     private lateinit var binding: FragmentGameBinding
@@ -188,9 +187,6 @@ class GameFragment : Fragment() {
             }
             operatorButtonToggle1.addView(button)
         }
-
-        MaterialAlertDialogBuilder(requireContext()).setMessage("This is instruction")
-            .setTitle("How to play mini Nerdle")
     }
 
     private fun initializeLayout(view: View) {
