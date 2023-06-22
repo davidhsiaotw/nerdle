@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity() {
                     val scrollView = instructionLayout.findViewById<ScrollView>(
                         R.id.instruction_scrollview
                     )
-                    // Problem: java.lang.IllegalStateException: The specified child already has a parent. You must call removeView() on the child's parent first.
+                    // Problem: java.lang.IllegalStateException: The specified child already has
+                    // a parent. You must call removeView() on the child's parent first.
                     // Solution: https://www.jianshu.com/p/d43d0ac7e2f7
                     val scrollViewParent = scrollView.parent as ViewGroup
                     scrollViewParent.removeView(scrollView)
