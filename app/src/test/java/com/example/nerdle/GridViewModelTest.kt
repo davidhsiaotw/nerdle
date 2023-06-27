@@ -132,7 +132,7 @@ class GridViewModelTest {
 
         pass = pass && !gridViewModel.isCorrect(input)
         // check if each grid is colored correctly
-        for (i in 0 .. input.size - 2) {
+        for (i in 0..input.size - 2) {
             pass = pass && input[i].color == Color.parseColor("#33AA00")
         }
         pass = if (ans?.contains(newDigit.toString()) == true) {   // color should be red
@@ -146,9 +146,81 @@ class GridViewModelTest {
 
     @Test
     fun moveToNextRow() {
+        var pass = true
+        val numColumns = gridViewModel.answer.value?.length ?: -1
+        if (numColumns == -1) {
+            fail("Answer is null")
+        }
+
+        pass = pass && gridViewModel.moveToNextRow()   // move to second row
+
+        // check if first row is disabled
+        for (i in 0 until numColumns) {
+            pass = pass && !gridViewModel.allGrids.value!![i].selectable
+        }
+
+        pass = pass && gridViewModel.selectedIndex.value == null
+
+        // check if second row is enabled
+        for (i in numColumns until numColumns * 2) {
+            pass = pass && gridViewModel.allGrids.value!![i].selectable
+        }
+
+        pass = pass && gridViewModel.moveToNextRow()   // move to third row
+        pass = pass && gridViewModel.moveToNextRow()   // move to fourth row
+        pass = pass && gridViewModel.moveToNextRow()   // move to fifth row
+        pass = pass && gridViewModel.moveToNextRow()   // move to sixth row
+        pass = pass && !gridViewModel.moveToNextRow()   // move to seventh row
+
+        pass = pass && gridViewModel.selectedIndex.value == null
+
+        // check if all grids are disabled
+        for (i in 0 until numColumns * 6) {
+            pass = pass && !gridViewModel.allGrids.value!![i].selectable
+        }
+
+        assertTrue(pass)
     }
 
     @Test
     fun onGridClicked() {
+        gridViewModel.initializeGameViewModel()
+
+        var pass = true
+        var clickedGrid = gridViewModel.allGrids.value!![0]
+
+        pass = pass && gridViewModel.selectedIndex.value == null
+        pass = pass && gridViewModel.onGridClicked(clickedGrid) == null  // select first grid
+
+        gridViewModel.selectedIndex.value?.let {
+            pass = pass && it == 0
+        }
+        gridViewModel.allGrids.value?.let {
+            pass = pass && it[0].isSelected
+        }
+
+        pass = pass && gridViewModel.onGridClicked(clickedGrid) == null    // deselect first grid
+
+        gridViewModel.selectedIndex.value?.let {
+            pass = pass && it == null
+        }
+        gridViewModel.allGrids.value?.let {
+            pass = pass && !it[0].isSelected
+        }
+
+        pass = pass && gridViewModel.onGridClicked(clickedGrid) == null    // select first grid
+        var previousIndex = clickedGrid.index
+        clickedGrid = gridViewModel.allGrids.value!![1]
+        pass = pass && gridViewModel.onGridClicked(clickedGrid) == previousIndex    // select second grid
+
+        gridViewModel.selectedIndex.value?.let {
+            pass = pass && it == 1
+        }
+        gridViewModel.allGrids.value?.let {
+            pass = pass && it[1].isSelected
+            pass = pass && !it[0].isSelected
+        }
+
+        assertTrue(pass)
     }
 }
