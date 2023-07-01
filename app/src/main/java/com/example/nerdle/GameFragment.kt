@@ -74,6 +74,7 @@ class GameFragment : Fragment() {
         // initialize number buttons: 0~9
         for (i in 0..9) {
             val button = MaterialButton(requireContext())
+            button.tag = "material-button_${i}"   // for instrumented test
             button.text = i.toString()
             button.setPadding(0)
             val params = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT)
@@ -98,6 +99,7 @@ class GameFragment : Fragment() {
         val operator1 = listOf("+", "-", "*", "/", "=")
         for (operator in operator1) {
             val button = MaterialButton(requireContext())
+            button.tag = "material-button_$operator"   // for instrumented test
             val params = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT)
             params.weight = 1F
             button.layoutParams = params

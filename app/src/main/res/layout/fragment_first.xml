@@ -6,22 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".GameFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/blocks_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/blocks_recycler_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/button_first"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/navigate_to_console"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blocks_recycler_view" />
+<!--    <Button-->
+<!--        android:id="@+id/button_first"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/navigate_to_console"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/blocks_recycler_view" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
